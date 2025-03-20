@@ -6,7 +6,7 @@ import 'dotenv/config';
 
 //*Rutas
 import connectDB from './config/mongoDB.config.js';
-
+import errorHandler from './middlewares/errorHandler.js';
 
 //*Entorno
 const app = express();
@@ -32,7 +32,7 @@ if(passport){
 }
 
 //*Manejo de errores
-//app.use(errorHandler);
+app.use(errorHandler);
 
 //*Levantando servidor
 app.listen(PORT, ()=>{
