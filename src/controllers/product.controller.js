@@ -9,6 +9,7 @@ class ProductController {
             next(error);
         }
     }
+
     async getProductById(req, res, next) {
         try {
             const product = await ProductService.getProductbyId(req.params.id);

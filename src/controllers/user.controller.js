@@ -1,5 +1,4 @@
-import UserService from "../services/user.services";
-import { generateToken } from "../utils/utils.js";
+import UserService from "../services/user.services.js";
 
 class UserController {
     async getUser(req, res, next){
