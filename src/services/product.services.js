@@ -5,6 +5,7 @@ class ProductService{
         return await ProductRepository.getAll();
     }
     async getProductbyId(id){
+        if(!id) throw new Error("Falta el id del producto");
         return await ProductRepository.getById(id);
     }
     async createProduct(productData){
