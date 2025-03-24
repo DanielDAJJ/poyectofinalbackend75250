@@ -1,4 +1,4 @@
-import ProductDao from "../dao/products.dao.js";
+import ProductDao from "../product.dao.js";
 
 class ProductRepository {
     async getAll() {

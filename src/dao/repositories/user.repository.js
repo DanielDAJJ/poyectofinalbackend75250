@@ -1,4 +1,4 @@
-import UserDao from "../dao/user.dao.js"
+import UserDao from "../user.dao.js";
 
 class UserRepository{
     async findById(id){

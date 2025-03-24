@@ -1,4 +1,4 @@
-import CartDao from "../dao/carts.dao.js";
+import CartDao from "../carts.dao.js";
 
 class CartRepository {
     async getCartById(id) {
