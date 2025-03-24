@@ -3,12 +3,12 @@ import ProductRepository from "../dao/repositories/product.repository.js";
 class ProductService{
     async getAllProducts(){
         const products = await ProductRepository.getAll();
-        return products.length > 0 ? products : {};
+        return products.length > 0 ? products : [];
     }
     async getProductbyId(id){
         if(!id) throw new Error("Falta el id del producto");
         const product = await ProductRepository.getById(id);
-        return product || {};
+        return product || [];
     }
     async createProduct(productData){
         if(!productData.name || !productData.price) throw new Error("faltan datos");
