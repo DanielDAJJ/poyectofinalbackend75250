@@ -4,6 +4,10 @@ class CartDao{
     async getById(id){
         return await CartModel.findById(id).populate("products.product");
     }
+    async createCart(userId) {
+        const newCart = new CartModel({ user: userId, products: [] });
+        return await newCart.save();
+    }
     async addProduct(cartId, productId, quantity){
         const cart = await CartModel.findById(cartId);
         if(!cart) throw new Error ("Carrito no encontrado");

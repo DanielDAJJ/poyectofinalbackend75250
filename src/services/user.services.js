@@ -9,6 +9,7 @@ class UserService{
         const existingUser = await UserRepository.findByEmail(userData.email);
         if(existingUser) throw new Error("el usuario ya existe");
         userData.password = createHash(userData.password);
+        userData.role = userData.role === "admin" ? "admin" : "user";
         return await UserRepository.create(userData);
     }
     async loginUser(email, password){

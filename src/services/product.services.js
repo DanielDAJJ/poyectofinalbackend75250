@@ -15,7 +15,8 @@ class ProductService{
         return await ProductRepository.createProduct(productData);
     }
     async updateProduct(id, productData){
-        if(!productData.name || !productData.price) throw new Error("faltan datos");
+        if(!id) throw new Error("faltan id");
+        
         return await ProductRepository.updateProduct(id, productData);
     }
     async deleteProduct(id){

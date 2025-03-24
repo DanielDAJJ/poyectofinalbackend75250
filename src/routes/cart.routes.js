@@ -4,6 +4,7 @@ import {authUser} from "../middlewares/auth.middleware.js";
 
 const router = Router();
 
+router.post("/", authUser, CartController.createCart);
 router.get("/:cartId", authUser, CartController.getCartById);
 router.post("/add", authUser, CartController.addProductToCart);
 router.post("/remove", authUser, CartController.removeProductFromCart);

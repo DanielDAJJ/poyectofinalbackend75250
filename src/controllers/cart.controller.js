@@ -10,6 +10,15 @@ class CartController {
             next(error);
         }
     }
+    async createCart(req, res, next) {
+        try {
+            const userId = req.user.id;
+            const cart = await CartService.createCart(userId);
+            res.status(201).json(cart);
+        } catch (error) {
+            next(error);
+        }
+    }
     async addProductToCart(req, res, next) {
         try {
             const { cartId, productId, quantity } = req.body;

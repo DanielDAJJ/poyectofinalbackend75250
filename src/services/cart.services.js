@@ -4,6 +4,9 @@ class CartService{
     async getCartById(id){
         return await CartRepository.getCartById(id);
     }
+    async createCart(userId) {
+        return await CartDao.createCart(userId);
+    }
     async addProductToCart(cartId, productId, quantity){
         if(quantity <= 0) throw new Error("La cantidad debe ser mayor a 0");
         const cart = await CartRepository.getCartById(cartId);
